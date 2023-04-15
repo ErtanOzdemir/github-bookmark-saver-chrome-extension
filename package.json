@@ -1,0 +1,19 @@
+{
+  "name": "github-bookmark-saver-chrome-extension",
+  "version": "1.0.0",
+  "description": "GitHub Bookmark Saver is a Chrome extension that you can use to save your bookmarks to GitHub.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension.git"
+  },
+  "author": "Ertan Ozdemir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension#readme"
+}
