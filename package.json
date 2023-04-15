@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension/issues"
   },
-  "homepage": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension#readme"
+  "homepage": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
