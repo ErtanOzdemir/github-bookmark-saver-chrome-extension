@@ -4,7 +4,7 @@
   "description": "GitHub Bookmark Saver is a Chrome extension that you can use to save your bookmarks to GitHub.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --config webpack.config.js --watch --mode production"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,12 @@
   "homepage": "https://github.com/ErtanOzdemir/github-bookmark-saver-chrome-extension#readme",
   "devDependencies": {
     "@babel/core": "^7.21.4",
+    "@babel/plugin-transform-typescript": "^7.21.3",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
@@ -36,7 +38,8 @@
     "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
-    "webpack": "^5.79.0"
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "sass": "^1.62.0"

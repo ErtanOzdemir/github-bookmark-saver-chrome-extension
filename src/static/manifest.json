@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Bookmark Saver",
+  "version": "1.0",
+  "description": "GitHub Bookmark Saver is a Chrome extension that you can use to save your bookmarks to GitHub.",
+  "background": {
+    "service_worker": "../dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["../dist/content.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

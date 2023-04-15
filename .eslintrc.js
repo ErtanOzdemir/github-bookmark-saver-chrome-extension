@@ -19,4 +19,7 @@ module.exports = {
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
   },
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
 };
