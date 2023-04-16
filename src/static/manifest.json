@@ -4,11 +4,16 @@
   "version": "1.0",
   "description": "GitHub Bookmark Saver is a Chrome extension that you can use to save your bookmarks to GitHub.",
   "background": {
-    "service_worker": "../dist/background.js"
+    "service_worker": "./background.js"
   },
+  "action": {
+    "default_popup": "./popup/popup.html"
+  },
+  "permissions": ["tabs"],
   "content_scripts": [
     {
-      "js": ["../dist/content.js"],
+      "js": ["./content.js"],
+      "css": ["./content/content.css"],
       "matches": ["http://*/*", "https://*/*"]
     }
   ]
