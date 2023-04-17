@@ -1,4 +1,9 @@
-import { type RequestInterFace, MESSAGES } from './interfaces';
+import { getRepoContentData, updateRepoContent } from './apiCalls';
+import {
+  type RequestInterFace,
+  MESSAGES,
+  type FormDataInterface,
+} from './interfaces';
 
 chrome.runtime.onMessage.addListener(
   (request: RequestInterFace, sender, sendResponse) => {
@@ -6,7 +11,11 @@ chrome.runtime.onMessage.addListener(
 
     switch (message) {
       case MESSAGES.ADD_NEW_BOOKMARK:
-        console.log('New Bookmark will add: ', payload);
+        void (async () => {
+          const contentData = await getRepoContentData();
+          await updateRepoContent(payload as FormDataInterface, contentData);
+        })();
+
         break;
 
       default:
@@ -19,9 +28,12 @@ chrome.runtime.onMessage.addListener(
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (tab.url !== null) {
-    chrome.tabs.sendMessage(tabId, {
-      message: MESSAGES.URL_CHANGED,
-      payload: { URL: tab.url, title: tab.title },
-    });
+    chrome.tabs
+      .sendMessage(tabId, {
+        message: MESSAGES.URL_CHANGED,
+        payload: { URL: tab.url, title: tab.title },
+      })
+      .then((data) => data)
+      .catch((err) => err);
   }
 });

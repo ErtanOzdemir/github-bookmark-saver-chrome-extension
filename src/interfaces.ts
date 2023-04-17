@@ -9,9 +9,14 @@ export interface FormDataInterface {
   commitMessage: string;
 }
 
+export interface RepoContentDataInterface {
+  content: string;
+  sha: string;
+}
+
 export interface RequestInterFace {
   message: string;
-  payload: FormDataInterface | PageInfoInterface ;
+  payload: FormDataInterface | PageInfoInterface;
 }
 
 // eslint-disable-next-line

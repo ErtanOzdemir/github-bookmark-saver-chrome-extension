@@ -86,10 +86,15 @@ const createPopup = (pageInfo: PageInfoInterface): HTMLDivElement | null => {
           : 'Add new bookmark',
     };
 
-    chrome.runtime.sendMessage({
-      message: MESSAGES.ADD_NEW_BOOKMARK,
-      payload: formData,
-    });
+    chrome.runtime
+      .sendMessage({
+        message: MESSAGES.ADD_NEW_BOOKMARK,
+        payload: formData,
+      })
+      .then((data) => data)
+      .catch((error) => {
+        throw new Error(error);
+      });
   });
 
   if (pageBody !== null) {
