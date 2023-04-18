@@ -61,11 +61,11 @@
 }
 
 .gbs-visible {
-  visibility: visible;
+  display: block;
 }
 
 .gbs-hidden {
-  visibility: hidden;
+  display: none;
 }
 
 input[type='submit'] {
