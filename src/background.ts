@@ -12,8 +12,17 @@ chrome.runtime.onMessage.addListener(
     switch (message) {
       case MESSAGES.ADD_NEW_BOOKMARK:
         void (async () => {
-          const contentData = await getRepoContentData();
-          await updateRepoContent(payload as FormDataInterface, contentData);
+          try {
+            const contentData = await getRepoContentData();
+            const response = await updateRepoContent(
+              payload as FormDataInterface,
+              contentData,
+            );
+
+            sendResponse({ success: true, response });
+          } catch (error) {
+            sendResponse({ success: false, error });
+          }
         })();
 
         break;

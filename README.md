@@ -28,8 +28,8 @@ GITHUB_AUTH_TOKEN=
 GITHUB_REPOSITORY_NAME=
 GITHUB_CONTENT_PATH=
 GITHUB_REPOSITORY_OWNER=
-GITHUB_COMITTER_NAME=
-GITHUB_COMITTER_EMAIL=
+GITHUB_COMMITTER_NAME=
+GITHUB_COMMITTER_EMAIL=
 ```
 
 | Variable                  | Description                                                                                                                                                                                                                              |
@@ -38,8 +38,8 @@ GITHUB_COMITTER_EMAIL=
 | `GITHUB_REPOSITORY_NAME`  | This variable should contain the name of the repository where you want to save the website links.                                                                                                                                        |
 | `GITHUB_CONTENT_PATH`     | This variable must contain the path on GitHub to the file where you want to save the links. For example if file is exist on root directory in GitHub you can write `README.md`                                                           |
 | `GITHUB_REPOSITORY_OWNER` | This is your GitHub username (example: `ErtanOzdemir`).                                                                                                                                                                                  |
-| `GITHUB_COMITTER_NAME`    | This is your name (example: `Ertan Özdemir`).                                                                                                                                                                                            |
-| `GITHUB_COMITTER_EMAIL`   | This is your email address that is used on GitHub.                                                                                                                                                                                         |
+| `GITHUB_COMMITTER_NAME`    | This is your name (example: `Ertan Özdemir`).                                                                                                                                                                                            |
+| `GITHUB_COMMITTER_EMAIL`   | This is your email address that is used on GitHub.                                                                                                                                                                                         |
 
 ### Running Extension on Chrome
 

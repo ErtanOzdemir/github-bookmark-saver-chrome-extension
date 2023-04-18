@@ -64,6 +64,12 @@ const createPopup = (pageInfo: PageInfoInterface): HTMLDivElement | null => {
         name="commitMessage"
       />
       <input id="gbs-form-button" type="submit" value="Add" />
+      <div id="gbs-success-box" class="gbs-hidden">
+        Bookmark saved successfully
+      </div>
+      <div id="gbs-failure-box" class="gbs-hidden">
+        Something went wrong. Please try again later
+      </div>
     </form>
   `;
 
@@ -91,9 +97,22 @@ const createPopup = (pageInfo: PageInfoInterface): HTMLDivElement | null => {
         message: MESSAGES.ADD_NEW_BOOKMARK,
         payload: formData,
       })
-      .then((data) => data)
-      .catch((error) => {
-        throw new Error(error);
+      .then((data) => {
+        if (data.success === true) {
+          popupBox
+            .querySelector('#gbs-failure-box')
+            ?.classList.replace('gbs-visible', 'gbs-hidden');
+          popupBox
+            .querySelector('#gbs-success-box')
+            ?.classList.replace('gbs-hidden', 'gbs-visible');
+        } else {
+          throw new Error(data.error);
+        }
+      })
+      .catch(() => {
+        popupBox
+          .querySelector('#gbs-failure-box')
+          ?.classList.replace('gbs-hidden', 'gbs-visible');
       });
   });
 

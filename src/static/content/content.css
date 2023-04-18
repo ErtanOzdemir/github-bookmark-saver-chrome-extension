@@ -12,7 +12,6 @@
 #gbs-popup-box {
   position: fixed;
   box-sizing: border-box;
-  height: 275px;
   width: 275px;
   background-color: white;
   bottom: 120px;
@@ -26,6 +25,18 @@
 #gbs-form {
   width: 100%;
   height: 100%;
+}
+
+#gbs-success-box {
+  color: green;
+  width: 100%;
+  text-align: center;
+}
+
+#gbs-failure-box {
+  color: red;
+  width: 100%;
+  text-align: center;
 }
 
 .gbs-input {
