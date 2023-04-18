@@ -5,6 +5,7 @@ import {
   type RequestInterFace,
 } from './interfaces';
 import { getFormData, html } from './helpers';
+import './styles/content.scss';
 
 const pageBody = document.getElementsByTagName(
   'body',
